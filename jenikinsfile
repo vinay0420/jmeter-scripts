@@ -18,7 +18,7 @@ pipeline {
             steps {
                 // Use bat instead of sh and adjust volume mount for Windows PowerShell syntax
                 bat """
-                docker run --rm -v %cd%\/tests -w /tests ${IMAGE_NAME} ^
+                docker run --rm -v %cd%\\/tests -w /tests ${IMAGE_NAME} ^
                 -n -t "Accountsummary _Script1.jmx" -l results.jtl
                 """
             }
