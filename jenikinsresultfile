@@ -2,9 +2,10 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = 'vinay040201/jmeterscriting:v1.0'
-        TEST_REPO = https://github.com/vinay0420/jmeter-scripts.git
-    }
+    IMAGE_NAME = 'vinay040201/jmeterscriting:v1.0'
+    TEST_REPO = 'https://github.com/vinay0420/jmeter-scripts.git'
+}
+
 
     stages {
 
@@ -20,7 +21,7 @@ pipeline {
             steps {
                 bat """
                 docker run --rm -v %cd%\\/tests -w /tests ${IMAGE_NAME} ^
-                -n -t Accountsummary _Script1.jmx -l results.jtl
+                -n -t "Accountsummary _Script1.jmx" -l results.jtl
                 """
             }
         }
