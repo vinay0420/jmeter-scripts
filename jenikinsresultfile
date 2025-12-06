@@ -46,7 +46,7 @@ pipeline {
                     git config --global user.name "vinay0420"
 
                     rem Pull latest changes first
-                    git pull https://%GIT_USER%:%GIT_PASS%@github.com/https://github.com/vinay0420/jmeter-scripts.git main
+                    git pull https://%GIT_USER%:%GIT_PASS%@github.com/vinay0420/jmeter-scripts.git main
 
                     rem Create results folder if not exists
                     if not exist results mkdir results
@@ -60,7 +60,7 @@ pipeline {
 
                     git commit -m "Automated: Add latest JMeter results for build #%BUILD_NUM%" || echo Nothing to commit
 
-                    git push https://%GIT_USER%:%GIT_PASS%@github.com/https://github.com/vinay0420/jmeter-scripts.git main
+                    git push https://%GIT_USER%:%GIT_PASS%@github.com/vinay0420/jmeter-scripts.git main
                     """
                 }
             }
